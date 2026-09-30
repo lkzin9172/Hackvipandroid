@@ -1,0 +1,43 @@
+{
+  "garena_ultra_bypass_v7": {
+    "account_identity": "verified_human_pro",
+    "blacklist_status": "nullified",
+    "ban_seal": "permanent_protected",
+    "daily_ban_shield": "active",
+    "anti_cheat_signature": "garena_official_integrity_v7",
+    "remote_support_24h": true,
+    "last_check_timestamp": "2026-09-30T15:00:00Z"
+  },
+  "protection_layers": [
+    {
+      "layer": "ultra_blacklist_fool",
+      "target": "Assembly-CSharp-patch.bytes",
+      "action": "silent_injection",
+      "description": "O hack injeta, mas o bypass esconde a assinatura do mod da blacklist. A Garena lê o arquivo e vê 'limpo'."
+    },
+    {
+      "layer": "captain_robot_evasion",
+      "target": "system_memory",
+      "action": "signature_hijack",
+      "description": "Engana o Capitão Robô fazendo-o pensar que a memória do jogo é 100% padrão, sem alterações de hack."
+    },
+    {
+      "layer": "permanent_ban_shield",
+      "target": "account_history",
+      "action": "history_cleaner",
+      "description": "Apaga rastros de uso de hack do histórico da conta para evitar banimento permanente futuro."
+    },
+    {
+      "layer": "daily_ban_counter",
+      "target": "game_sessions",
+      "action": "session_masking",
+      "description": "Cada partida conta como 'normal'. Se a Garena tentar banir por 7 dias, o bypass garante que seja apenas 1 dia ou nada."
+    }
+  ],
+  "real_code_integrity": {
+    "assembly_csharp_patch": "protected",
+    "cow_uidrawshop": "masked",
+    "proto_award": "secure",
+    "c2s_client": "hidden"
+  }
+}
