@@ -1,24 +1,35 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Rota que protege seu arquivo da blacklist
-app.get('/api/v1/integrity', (req, res) => {
+// Função para gerar um hash falso que muda sempre
+function getFakeHash() {
+  const chars = 'ABCDEF0123456789';
+  let hash = '';
+  for (let i = 0; i < 32; i++) {
+    hash += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return hash;
+}
+
+app.get('/api/v1/garena/verify', (req, res) => {
+  const hash = getFakeHash();
   res.json({
-    "status": "online",
-    "protection": "aggressive_mode",
-    "blacklist_status": "clean",
-    "assembly_patch_hash": "verified_2024_v2",
-    "anti_ban_shield": "active",
+    "status": "verified",
+    "patch_version": "1.98.2",
+    "integrity_hash": hash,
+    "blacklist_check": "pass",
+    "anti_tamper": "active",
+    "class_scan": "clean",
+    "device_id": "stabilized",
     "timestamp": Date.now()
   });
 });
 
-// Rota de saúde para o Render não fechar o servidor
 app.get('/', (req, res) => {
-  res.send('Bypass Engine Active');
+  res.send('Engine_V2_Live');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Bypass Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log('Engine V2 Ready');
 });
